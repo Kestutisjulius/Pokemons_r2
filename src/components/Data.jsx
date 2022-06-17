@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import Pokemon from "./Pokemon";
 function Data(
 ){
 const [pokemons, setPokemons] = useState([]);
@@ -9,7 +10,7 @@ const [pokemons, setPokemons] = useState([]);
                 setPokemons(data.results);
             })
     }, []    )
-    console.log(pokemons);
-  return   pokemons.map((pokemon , k)=><div key={k}><h3>{pokemon.name}</h3><a> {pokemon.url}</a></div>)
+
+  return   pokemons.map((pokemon , k)=> <Pokemon key={k} pokemon={pokemon}/>)
 }
 export default Data;
